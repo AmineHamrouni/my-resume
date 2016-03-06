@@ -1,0 +1,74 @@
+body
+  background-color: $silver
+  overflow-x: hidden
+
+.Section_01
+	background-color: #353541
+	height: 100vh
+	color: white
+	background:
+		//image: url(http://www.igneileiplik.com/file/2015/12/Webdesigner-K%C3%B8benhavn1.jpg)
+		size: cover
+		repeat: no-repeat
+	+image-rendering(optimizeSpeed)
+	div
+		+outer-container()
+		*
+			+shift(6)
+			+span-columns(5)
+			text-align: center
+	
+		p
+			font-size: 18px
+	
+		h2
+			margin-top: 25%
+			font-size: 48px
+			position: relative
+	
+			&:after, &:before
+				content: ''
+				position: absolute
+				background-color: #fb6470
+				height: 2px
+				width: 100%
+				left: 50%
+				+transform (translate(-50%, 50%))
+			&:after
+				bottom: -17px
+	
+			&:before
+				top: -17px
+		
+		button
+			margin-top: 47px
+			background: #fb6470
+			&:hover
+				background: $teal	
+	
+//Section_02
+
+.section-title
+	color: #3e3e3e
+	font-size: 32px
+	font-weight: normal
+	position: relative
+	
+	&:after
+		content: ''
+		background-color: #fb6470
+		height: 2px
+		width: 76px
+		position: absolute
+		bottom: -10px
+		left: 0
+
+.Section_02
+	+outer-container()
+	.block
+		padding-top: 80px
+		+clearfix
+		div
+			+span-columns(1 of 2)
+			p
+				padding-top: 15px
