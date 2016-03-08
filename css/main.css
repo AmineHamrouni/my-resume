@@ -224,63 +224,6 @@ picture {
   max-width: 100%;
 }
 
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Sans"), local("FiraSans-Regular"), url(http://fonts.gstatic.com/s/firasans/v5/EjsrzDkQUQCDwsBtLpcVQZBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(http://fonts.gstatic.com/s/firasans/v5/DugPdSljmOTocZOR2CItOhampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Mono"), local("FiraMono"), url(http://fonts.gstatic.com/s/firamono/v3/SlRWfq1zeqXiYWAN-lnG-pBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Sans"), local("FiraSans-Regular"), url(http://fonts.gstatic.com/s/firasans/v5/EjsrzDkQUQCDwsBtLpcVQZBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(http://fonts.gstatic.com/s/firasans/v5/DugPdSljmOTocZOR2CItOhampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Fira Mono"), local("FiraMono"), url(http://fonts.gstatic.com/s/firamono/v3/SlRWfq1zeqXiYWAN-lnG-pBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
-}
-
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -502,6 +445,185 @@ th {
   padding: 0;
 }
 
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px;
+}
+
+.modal .modal-state {
+  display: none;
+}
+
+.modal .modal-trigger {
+  padding: 0.8em 1em;
+}
+
+.modal .modal-fade-screen {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  visibility: hidden;
+  z-index: 99999999999;
+}
+
+@media screen and (min-width: 53.75em) {
+  .modal .modal-fade-screen {
+    padding-top: 10em;
+  }
+}
+
+.modal .modal-fade-screen .modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  cursor: pointer;
+}
+
+.modal .modal-close:after, .modal .modal-close:before {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 1.5em;
+  width: 0.15em;
+  background: #ddd;
+  content: '';
+  display: block;
+  margin: -3px 0 0 -1px;
+}
+
+.modal .modal-close:hover:after, .modal .modal-close:hover:before {
+  background: #c4c4c4;
+}
+
+.modal .modal-close:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.modal .modal-inner {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  background: #fff;
+  border-radius: 3px;
+  margin-top: 0;
+  margin: auto;
+  max-height: 95%;
+  overflow: auto;
+  padding: 1.5em;
+  position: relative;
+  width: 95%;
+}
+
+@media screen and (min-width: 40em) {
+  .modal .modal-inner {
+    max-height: 70%;
+    padding: 3em;
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 53.75em) {
+  .modal .modal-inner {
+    width: 50%;
+  }
+}
+
+.modal .modal-inner h1 {
+  color: #333;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.modal .modal-inner p {
+  color: #333;
+  line-height: 1.5;
+  padding: 0;
+  text-align: left;
+}
+
+.modal .modal-inner .modal-intro {
+  margin-bottom: 1em;
+}
+
+.modal .modal-inner .modal-content {
+  color: #333;
+}
+
+@media screen and (min-width: 40em) {
+  .modal .modal-inner .modal-content {
+    -webkit-columns: 2 8em;
+    -moz-columns: 2 8em;
+    columns: 2 8em;
+  }
+}
+
+.modal .modal-inner .modal-content input, .modal .modal-inner .modal-content textarea {
+  text-align: left;
+  color: black;
+}
+
+.modal .modal-inner a.cta {
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-top: 1em;
+}
+
+.modal .modal-inner a.cta:last-child {
+  padding: 0 2em;
+}
+
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
 body {
   background-color: #f9f9f9;
   overflow-x: hidden;
@@ -515,14 +637,20 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-blend-mode: overlay;
   image-rendering: optimizeSpeed;
 }
 
-.Section_01 div {
+.Section_01 .container {
   position: relative;
-  top: 35%;
+  top: 50%;
   left: 50%;
-  max-width: 500px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 600px;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -560,23 +688,47 @@ body {
   -ms-flex-direction: column;
 }
 
-.Section_01 div * {
+.Section_01 .container * {
   text-align: center;
 }
 
-.Section_01 div p {
+.Section_01 .container p {
   font-size: 16px;
-  padding-bottom: 45px;
   width: 100%;
 }
 
-.Section_01 div h2 {
+.Section_01 .container .dev-icons {
+  display: flex;
+}
+
+.Section_01 .container .dev-icon {
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Section_01 .container .dev-icon i {
+  font-size: 28px;
+  padding: 0 5px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.Section_01 .container .dev-icon i:hover {
+  color: white;
+  font-size: 32px;
+}
+
+.Section_01 .container h2 {
   font-size: 48px;
   position: relative;
   width: 100%;
 }
 
-.Section_01 div h2:after, .Section_01 div h2:before {
+.Section_01 .container h2:after, .Section_01 .container h2:before {
   content: '';
   position: absolute;
   background-color: #fb6470;
@@ -590,23 +742,39 @@ body {
   transform: translate(-50%, 50%);
 }
 
-.Section_01 div h2:after {
+.Section_01 .container h2:after {
   bottom: -17px;
 }
 
-.Section_01 div h2:before {
+.Section_01 .container h2:before {
   top: -17px;
 }
 
-.Section_01 div button {
+.Section_01 .container .modal-trigger {
   background: #fb6470;
   font-size: 22px;
   padding: 10px;
+  margin-top: 25px;
   width: 172px;
 }
 
-.Section_01 div button:hover {
+.Section_01 .container .modal-trigger:hover {
   background: #39CCCC;
+}
+
+.Section_01 .container form .column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+
+.Section_01 .container form .column:last-child {
+  margin-right: 0;
+}
+
+.Section_01 .container form input[type="submit"] {
+  float: right;
 }
 
 .section-title {

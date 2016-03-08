@@ -12,11 +12,13 @@ body
 		size: cover
 		repeat: no-repeat
 	background-attachment: fixed
+	background-blend-mode: overlay
 	+image-rendering(optimizeSpeed)
-	div
+	.container
 		//background-color: pink
-		+position(relative, 35% null null 50%)
-		max-width: 500px
+		+position(relative, 50% null null 50%)
+		+transform (translate(-50%, -50%))
+		max-width: 600px
 		+display(flex)
 		+align-items(center)
 		+justify-content(flex-start)
@@ -27,8 +29,25 @@ body
 	
 		p
 			font-size: 16px
-			padding-bottom: 45px
 			width: 100%
+	
+		.dev-icons
+			display: flex
+		.dev-icon
+			+size(40px)
+			
+			//background: pink
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			i
+				font-size: 28px
+				padding: 0 5px
+				+transition(all .2s ease)
+				
+				&:hover
+					color: white
+					font-size: 32px
 	
 		h2
 			font-size: 48px
@@ -48,14 +67,22 @@ body
 	
 			&:before
 				top: -17px
-		
-		button
+			
+		.modal-trigger
 			background: #fb6470
 			font-size: 22px
 			padding: 10px
+			margin-top: 25px
 			width: 172px
 			&:hover
 				background: $teal	
+	
+		form
+			.column
+				+span-columns(6 of 12)
+			
+			input[type="submit"]
+				float: right
 	
 //Section_02
 
